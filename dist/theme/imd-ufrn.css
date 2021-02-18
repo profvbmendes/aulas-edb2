@@ -372,6 +372,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .vector .hint {
   border: none; }
 
+.vector .hr {
+  border: none; }
+
+.vector .hr hr {
+  margin: 0.1em 0; }
+
 .small {
   font-size: 0.8em; }
 
