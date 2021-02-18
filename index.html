@@ -2254,6 +2254,25 @@
         <section>
           <h2>Exercício 1</h2>
           <p>Implementar a busca binária de forma recursiva.</p>
+          <div class="small hide-on-fragment" data-hide-on-fragment="0" style="font-size: 0.6em;">
+            <pre width="80%"><code data-trim data-noescape data-line-numbers>
+              public int pesquisaBinariaIterativa(int[] vetor, int chave) {
+                int meio;
+                int inicio = 0.0;
+                int fim = vetor.length - 1.0;
+
+                while (inicio &lt;= fim) {
+                  meio = Math.floor((inicio + fim)/2.0);
+                
+                  if (chave == vetor[meio]) return meio;
+                  else if (chave &lt; vetor[meio]) fim = meio - 1;
+                  else inicio = meio + 1; 
+                }
+
+                return -1;
+              }
+            </code></pre>
+          </div>
           <div class="small fragment" style="font-size: 0.6em;">
             <pre width="80%"><code data-trim data-noescape data-line-numbers>
               public int pesquisaBinariaCauda(int[] vetor, int chave, int inicio, int fim) {
@@ -2360,6 +2379,16 @@
               <td class="center"><span class="inline-equation">\begin{equation} O(1) \end{equation}</span></td>
             </tr>
           </table>
+        </section>
+        <section>
+          <h2>Outras exemplos</h2>
+          <p><span class="inline-equation">\begin{equation} f(n) = f(n/2) + c \implies O(\log{n}) \end{equation}</span></p>
+          <p class="fragment"><span class="inline-equation">\begin{equation} f(n) = 2f(n/2) + c \implies O(n) \end{equation}</span></p>
+          <p class="fragment"><span class="inline-equation">\begin{equation} f(n) = 2f(n/2) + n \implies O(n\log{n}) \end{equation}</span></p>
+          <p class="fragment"><span class="inline-equation">\begin{equation} f(n) = 4f(n/2) + c \implies O(n^2) \end{equation}</span></p>
+          <p class="fragment"><span class="inline-equation">\begin{equation} f(n) = 4f(n/2) + n \implies O(n^2) \end{equation}</span></p>
+          <p class="fragment"><span class="inline-equation">\begin{equation} f(n) = 4f(n/2) + n^2 \implies O(n^2\log{n}) \end{equation}</span></p>
+          <p class="fragment"><span class="inline-equation">\begin{equation} f(n) = 4f(n/2) + n^3 \implies O(n^3) \end{equation}</span></p>
         </section>
       </div>
     </div>
